@@ -156,7 +156,7 @@ function getBotResponse(input) {
             <i>Paalala: 3 business days bago mag-reflect ang bayad.</i>`
     },
     LagunaAquatechVslwd: {
-        kw: ["difference", "magkaiba", "pagkakaiba", "vs", "compare", "roles"],
+        kw: ["difference", "magkaiba", "pagkakaiba", "vs", "compare", "roles", "pinagkaiba", "pag kakaiba"],
         en: `<b>Difference between LWD and Laguna Aquatech:</b><br><br>
             • <b>LWD:</b> The Owner & Regulator (Quality control).<br>
             • <b>Laguna Aquatech:</b> The Operator (Billing & Repairs).<br><br>
@@ -167,12 +167,12 @@ function getBotResponse(input) {
             <i>Ang LWD ang sumusuri sa tubig; ang Aquatech ang nagpapadala ng bill.</i>`
     },
     aboutLWD: {
-        kw: ["ano ang lwd", "about lwd", "laguna water district", "ano ang tungkulin ng lwd", "ano ang ginagawa"],
+        kw: ["ano ang lwd", "about lwd", "laguna water district", "ano ang tungkulin ng lwd", "ano ang ginagawa", "what is lwd"],
         en: "<b>What does Laguna Water District (LWD) do?</b><br>LWD is the <b>government regulator</b>. They ensure water quality through analysis and oversee the partnership with Laguna Aquatech to protect consumers.",
         tl: "<b>Ano ang ginagawa ng Laguna Water District (LWD)?</b><br>Ang LWD ang <b>government regulator</b>. Sila ang sumusuri sa kalidad ng tubig (water analysis) at naniniguradong maayos ang serbisyo ng Laguna Aquatech para sa publiko."
     },
     about_aquatech: {
-        kw: ["ano ang laguna aquatech", "what is laguna aquatech", "about the company"],
+        kw: ["ano ang laguna aquatech", "what is laguna aquatech", "about the company"],    
         en: "<b>What is Laguna Aquatech?</b><br>It is the service operator handling billing and repairs.",
         tl: "<b>Ano ang Laguna Aquatech?</b><br>Sila ang operator na namamahala sa billing at repairs."
     },
@@ -217,7 +217,7 @@ function getBotResponse(input) {
         tl: "<b>Bakit mataas ang bill?</b><br>• <b>Leaks:</b> I-check kung may tagas sa banyo o gripo.<br>• <b>Meter Test:</b> Kung umiikot ang metro kahit sarado lahat ng gripo, may leak.<br>• <b>Fees:</b> Kasama sa bill ang Septage at Environmental fees."
     },
     delayedBill: {
-        kw: ["delayed", "hindi dumating", "anyare", "bakit wala ang bill", "wala pang bill", "late bill", "nawawalang bill"],
+        kw: ["delayed", "hindi dumating", "anyare", "bakit wala ang bill", "wala pang bill", "late bill", "nawawalang bill", "walang dumating"],
         en: "<b>Bill Issues:</b> Monthly bills may be delayed due to adjusted meter reading schedules. To get your current balance, please contact Laguna Aquatech at (049) 536-0661.",
         tl: "<b>Isyu sa Bill:</b> Maaaring maantala ang bill dahil sa bagong schedule ng meter reading. Maaari ninyong itanong ang inyong balance sa (049) 536-0661."
     },
@@ -338,7 +338,7 @@ function getBotResponse(input) {
     },
     reconnection: {
         // FOCUS: Getting water BACK (Process, Fees, SOA)
-        kw: ["reconnection", "re-connection", "reconnect", "ikabit ulit", "paano magpakabit ulit", "soa", "statement of account", "reconnection fee", "ulit",  "magkano reconnection", "pabalik ng tubig", "ibalik ang tubig"],
+        kw: ["reconnection", "re-connection", "reconnect", "ikabit ulit", "paano magpakabit ulit", "soa", "statement of account", "reconnection fee", "ulit",  "magkano reconnection", "pabalik ng tubig", "ibalik ang tubig","reconnect"],
         en: `<b>How to Reconnect your Water Service:</b><br><br>
             1. 📄 <b>Provide SOA:</b> Obtain your Statement of Account (SOA) from the Laguna Aquatech office.<br>
             2. 💳 <b>Settle Balance:</b> Pay all unpaid bills and the reconnection fee (₱280.00).<br>
