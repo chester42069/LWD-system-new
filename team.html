@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Laguna Water District</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="team.css">
+    <link rel="stylesheet" href="chat.css">
+    <link rel="icon" type="image/png" href="LWDLOGO.png">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="LWDLOGO.png" alt="Laguna Water District Logo">
+            </a>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="team.html" class="active">Our Team</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Overview <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="overview.html">Citizen's Charter</a></li>
+                            <li><a href="resources.html">Certifications & Careers</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="hero-content">
+            <div class="breadcrumb">Organizational Structure</div>
+            <h1>Meet the <span>Leadership</span></h1>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            
+            <div id="board" class="department-block">
+                <h2>Board of Directors</h2>
+                <div class="department-image">
+                    <img src="lagunalake.jpeg" alt="Board of Directors Team">
+                </div>
+            </div>
+
+            <div id="cmu" class="department-block">
+                <h2>Laguna Water District Contract Monitoring Unit</h2>
+                <div class="department-image">
+                    <img src="lagunalake.jpeg" alt="Contract Monitoring Unit Team">
+                </div>
+            </div>
+
+            <div id="technical" class="department-block">
+                <h2>Technical Unit</h2>
+                <div class="department-image">
+                    <img src="lagunalake.jpeg" alt="Technical Unit Team">
+                </div>
+            </div>
+
+            <div id="admin" class="department-block">
+                <h2>Admin Unit</h2>
+                <div class="department-image">
+                    <img src="lagunalake.jpeg" alt="Admin Unit Team">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Laguna Water District</h4>
+                <p>Your partner in sustainable water management.</p>
+                <div class="socials">
+                    <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://x.com/"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/login"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="project.html">Projects</a>
+                <a href="overview.html">Overview</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p><i class="fa-solid fa-location-dot"></i> 5524 Manila S Rd, Los Baños, Laguna</p>
+                <p><i class="fa-solid fa-phone"></i> (049) 536-0661</p>
+                <p><i class="fa-solid fa-envelope"></i> customercare@LWDistrict.onmicrosoft.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2026 Laguna Water District. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="chat.js"></script>
+    <script src="chat-loader.js"></script>
+    <script>
+        const header = document.querySelector('header');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navUl = document.querySelector('nav ul');
+        const icon = menuToggle.querySelector('i');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        menuToggle.addEventListener('click', () => {
+            navUl.classList.toggle('active');
+            if (navUl.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+                header.style.background = "#fff";
+                header.querySelectorAll('a, i').forEach(el => el.style.color = "#00296b");
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+                if(window.scrollY < 50) {
+                    header.style.background = "transparent";
+                    header.removeAttribute('style');
+                    header.querySelectorAll('a, i').forEach(el => el.style.color = "");
+                }
+            }
+        });
+
+        // Close mobile menu when resizing window to prevent layout bugs
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && navUl.classList.contains('active')) {
+                navUl.classList.remove('active');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+                if (window.scrollY < 50) {
+                    header.style.background = "transparent";
+                    header.removeAttribute('style');
+                    header.querySelectorAll('a, i').forEach(el => el.style.color = "");
+                }
+            }
+        });
+    </script>
+</body>
+</html>

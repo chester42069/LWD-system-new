@@ -1,0 +1,377 @@
+/* =========================================
+   1. VARIABLES & GLOBAL RESETS
+   ========================================= */
+:root {
+    --primary: #00509d;       
+    --primary-dark: #00296b;
+    --secondary: #001524;     
+    --accent: #00b4d8;        
+    --text-body: #475569;
+    --bg-light: #f8fafc;
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.85);
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-body);
+    background-color: var(--bg-light);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--secondary);
+    line-height: 1.2;
+}
+
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+ul { list-style: none; }
+img { display: block; max-width: 100%; }
+
+/* =========================================
+   2. HEADER & NAV
+   ========================================= */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: var(--transition);
+    
+    background: rgba(255, 255, 255, 0); 
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(12px); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+}
+
+header.scrolled {
+    background: var(--white);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: none; 
+    padding: 0.8rem 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img { height: 45px; width: auto; }
+
+nav ul.nav-links { display: flex; gap: 2.5rem; align-items: center; }
+nav a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--white); 
+    opacity: 0.9;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: #00b4d8;
+    transition: var(--transition);
+}
+
+nav a:hover::after, nav a.active::after { width: 100%; }
+nav a:hover, nav a.active { opacity: 1; color: #00b4d8; }
+
+header.scrolled nav a { color: var(--secondary); }
+header.scrolled nav a:hover, header.scrolled nav a.active { color: var(--primary-dark); }
+
+.menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--white); }
+header.scrolled .menu-toggle { color: var(--secondary); }
+
+/* --- DROPDOWN MENU STYLES --- */
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white);
+    min-width: 240px;
+    box-shadow: var(--shadow-lg);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    flex-direction: column;
+    gap: 0; 
+    z-index: 1001;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+.dropdown-content li {
+    width: 100%;
+}
+
+.dropdown-content a {
+    color: var(--secondary) !important; 
+    padding: 12px 20px;
+    display: block;
+    font-size: 0.9rem;
+    opacity: 1;
+}
+
+.dropdown-content a::after {
+    display: none; 
+}
+
+.dropdown-content a:hover {
+    background-color: #f8fafc;
+    color: var(--primary) !important;
+}
+
+/* =========================================
+   3. PAGE HERO
+   ========================================= */
+.page-header {
+    background: linear-gradient(135deg, rgba(0, 21, 36, 0.5) 0%, rgba(0, 0, 0, 0.4) 50%),
+                url('lagunalake.jpeg') center/cover; 
+    height: 50vh; 
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    animation: fadeUp 1s ease-out;
+}
+
+.breadcrumb {
+    color: var(--accent);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.page-header h1 span { color: #00b4d8; }
+
+/* =========================================
+   4. DEPARTMENT BLOCKS & IMAGES
+   ========================================= */
+.team-section {
+    padding-bottom: 6rem; 
+    background: var(--bg-light);
+}
+
+.department-block {
+    max-width: 1000px;
+    margin: 0 auto 5rem; /* Space between departments */
+}
+
+.department-block:last-child {
+    margin-bottom: 0;
+}
+
+.department-block h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--primary-dark);
+}
+
+.department-image {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    background: var(--white);
+}
+
+.department-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.department-image:hover img {
+    transform: scale(1.02);
+}
+
+/* =========================================
+   5. FOOTER
+   ========================================= */
+footer { background: var(--secondary); color: var(--white); padding: 5rem 0 2rem; }
+.footer-content {
+    max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 4rem;
+}
+.footer-col h4 { color: var(--white); margin-bottom: 1.5rem; font-size: 1.2rem; position: relative; padding-left: 15px; }
+.footer-col h4::before { content: ''; position: absolute; left: 0; top: 5px; height: 18px; width: 4px; background: var(--accent); border-radius: 2px; }
+.footer-col a, .footer-col p { color: #94a3b8; display: block; margin-bottom: 0.8rem; font-size: 0.95rem; transition: var(--transition); }
+.footer-col a:hover { color: var(--accent); transform: translateX(5px); }
+.socials { display: flex; gap: 12px; margin-top: 1.5rem; }
+.socials a {
+    width: 36px; height: 36px; background: rgba(255,255,255,0.05);
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; color: var(--white); border: 1px solid rgba(255,255,255,0.1);
+}
+.socials a:hover { background: var(--accent); border-color: var(--accent); color: var(--secondary); }
+.copyright { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); color: #64748b; font-size: 0.85rem; }
+
+/* =========================================
+   6. RESPONSIVE
+   ========================================= */
+@keyframes fadeUp { 
+    from { opacity: 0; transform: translateY(20px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+@media (max-width: 768px) {
+    /* --- Navigation --- */
+    .menu-toggle { display: block; }
+    
+    nav ul.nav-links {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+        gap: 0;
+        box-shadow: var(--shadow-md);
+        border-top: 1px solid #eee;
+        
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        visibility: hidden;
+        transition: clip-path 0.3s ease-in-out, visibility 0.3s;
+    }
+
+    nav li {
+        width: 100%; 
+    }
+    
+    nav ul.active { 
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        visibility: visible; 
+    }
+    
+    nav a { 
+        color: var(--secondary); 
+        padding: 1rem 2rem; 
+        display: block; 
+        width: 100%; 
+        font-size: 1rem;
+        text-align: center; 
+    }
+    
+    nav a:hover { 
+        background: #f1f5f9; 
+        color: var(--primary-dark); 
+    }
+    
+    nav a::after { display: none; }
+
+    nav a.active {
+        color: var(--primary);
+        background: rgba(0, 80, 157, 0.05);
+        font-weight: 700;
+        border-left: 4px solid var(--primary);
+    }
+    
+    /* --------------------------------------
+       Mobile Flatten Menu Fixes 
+       -------------------------------------- */
+    .dropdown > a.dropbtn {
+        display: none; 
+    }
+    
+    .dropdown {
+        width: 100%;
+        display: block; 
+    }
+    
+    .dropdown-content {
+        display: flex;
+        flex-direction: column;
+        position: static; 
+        box-shadow: none;
+        background-color: transparent; 
+        width: 100%;
+        border-radius: 0;
+        padding: 0;
+        visibility: visible;
+        clip-path: none;
+    }
+    
+    .dropdown-content a {
+        padding: 1rem 2rem; 
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    /* --- Hero Section --- */
+    .page-header { 
+        height: 40vh; 
+        min-height: 320px; 
+        margin-bottom: 2.5rem; 
+    }
+    
+    .page-header h1 { font-size: 2.2rem; }
+    .breadcrumb { font-size: 0.75rem; }
+
+    /* --- Department Blocks Mobile Adjustments --- */
+    .team-section { padding-bottom: 3rem; }
+    .department-block { margin-bottom: 3rem; } 
+    .department-block h2 { font-size: 1.5rem; margin-bottom: 1.2rem; }
+}

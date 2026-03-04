@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources & Careers - Laguna Water District</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="resources.css">
+    <link rel="stylesheet" href="chat.css">
+    <link rel="icon" type="image/png" href="LWDLOGO.png">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="LWDLOGO.png" alt="Laguna Water District Logo">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="active dropbtn">Overview <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 4px;"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="overview.html">Citizen's Charter</a></li>
+                            <li><a href="resources.html">Certifications & Careers</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+            <div class="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">District Updates</div>
+            <h1>Certifications & <span>Opportunities</span></h1>
+        </div>
+    </section>
+
+    <section class="resources-section">
+        <div class="container">
+            <div class="section-title">
+                <h3>Certifications & Careers</h3>
+                <div class="line"></div>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card" onclick="openModal(this.querySelector('.source-img'))">
+                    <div class="card-thumb">
+                        <img src="certificate of compliance year 2025.jpg" alt="Certificate of Compliance 2025" class="source-img">
+                        <div class="overlay"><i class="fa-solid fa-expand"></i></div>
+                    </div>
+                    <div class="card-body">
+                        <h4>Certificate of Compliance</h4>
+                        <p>Validation of LWD's adherence to national standards for 2025.</p>
+                        <span class="link-text">View <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+                <div class="resource-card" onclick="openModal(this.querySelector('.source-img'))">
+                    <div class="card-thumb">
+                        <img src="career opportunities.jpg" alt="Career Opportunities" class="source-img">
+                        <div class="overlay"><i class="fa-solid fa-expand"></i></div>
+                    </div>
+                    <div class="card-body">
+                        <h4>Career Opportunities</h4>
+                        <p>Join our team. Explore current job openings and requirements for 2025.</p>
+                        <span class="link-text">View <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Laguna Water District</h4>
+                <p>Your partner in sustainable water management.</p>
+                <div class="socials">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="team.html">Our Team</a>
+                <a href="services.html">Services</a>
+                <a href="project.html">Projects</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p><i class="fa-solid fa-location-dot"></i> 5524 Manila S Rd, Los Baños, Laguna</p>
+                <p><i class="fa-solid fa-phone"></i> (049) 536-0661</p>
+                <p><i class="fa-solid fa-envelope"></i> customercare@LWDistrict.onmicrosoft.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2026 Laguna Water District. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="chat.js"></script>
+    <script src="chat-loader.js"></script>
+    <script>
+        // Modal & Header Logic
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        function openModal(element) { modal.style.display = "block"; modalImg.src = element.src; captionText.innerHTML = element.alt; }
+        function closeModal() { modal.style.display = "none"; }
+        window.onclick = function(event) { if (event.target == modal) { modal.style.display = "none"; } }
+
+        const header = document.querySelector('header');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navUl = document.querySelector('nav ul');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { header.classList.add('scrolled'); } 
+            else { header.classList.remove('scrolled'); }
+        });
+
+        menuToggle.addEventListener('click', () => {
+            navUl.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (navUl.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+                header.style.background = "#fff";
+                header.querySelectorAll('a, i').forEach(el => el.style.color = "#00296b");
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+                if(window.scrollY < 50) {
+                    header.style.background = "transparent";
+                    header.removeAttribute('style');
+                    header.querySelectorAll('a, i').forEach(el => el.style.color = "");
+                }
+            }
+        });
+    </script>
+</body>
+</html>
