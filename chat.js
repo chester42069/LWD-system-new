@@ -349,7 +349,7 @@ function getBotResponse(input) {
             3. ⏳ <b>Timeline:</b> Maibabalik ang inyong serbisyo ng tubig sa loob ng <b>24 oras</b> matapos makapagbayad.`
     },
     office: {
-        kw: ["hours", "open", "location", "address", "saan", "oras", "bukas", "opisina", "where"],
+        kw: ["hours", "open", "location", "address", "saan", "oras", "bukas", "opisina", "where", "office", "hour", "office hours", "office hour"],
         en: "<b>Mon-Fri, 8AM-5PM (No Noon Break)</b>. Located at 5524 Manila South Rd, Brgy. Maahas.",
         tl: "<b>Mon-Fri, 8AM-5PM (Walang Noon Break)</b>. Matatagpuan sa 5524 Manila South Rd, Brgy. Maahas."
     },
