@@ -98,7 +98,7 @@ function getBotResponse(input) {
         'mo', 'ako', 'kami', 'tayo', 'kayo', 'sila', 'ito', 'iyan', 'doon', 
         'rito', 'nito', 'lang', 'naman', 'pala', 'kasi', 'mismo', 'meron', 'wala',
         'ayos', 'ayusin', 'naka', 'nag', 'mag', 'kakabit', 'bayad', 'tubig',
-        'kulay', 'maputi', 'mabilis', 'matagal', 'paano'
+        'kulay', 'maputi', 'mabilis', 'matagal', 'paano',
     ];
     
     let isTagalog = words.some(word => tlMarkers.includes(word));
@@ -106,12 +106,12 @@ function getBotResponse(input) {
  
     const library = {
         billingPolicy: {
-        kw: ["minimum", "reconnection", "re-connection", "hindi ginagamit", "bakit may bayad"],
+        kw: ["minimum", "reconnection", "re-connection", "hindi ginagamit", "charge", "bakit may bayad", "minimum charge", "reconnection fee", "bakit may minimum charge", "bakit may reconnection fee"],
         en: "<b>Minimum Charge & Reconnection Fee:</b> These policies and fees are implemented by <b>Laguna Aquatech</b>. They handle all billing regulations. Please visit their office or call (049) 536-0661 for a detailed explanation.",
         tl: "<b>Bakit may Minimum Charge at Reconnection Fee?</b><br>Ang mga policy na ito ay sa ilalim ng <b>Laguna Aquatech</b>. Sila lamang po ang makakapag-paliwanag ng detalye. Maaari po kayong tumawag sa (049) 536-0661."
     },
     paymentOptions: {
-        kw: ["how to pay", "payment", "where to pay", "options", "water bill", "pay", "magbayad", "saan magbabayad", "bayad", "paano mag bayad ng bills"],
+        kw: ["how to pay", "payment", "where to pay", "options", "water bill", "pay", "magbayad", "saan magbabayad", "bayad", "paano mag bayad ng bills", "paano magbayad", "paano mag bayad", "paano magbayad ng bill"],
         en: `<b>Where would you like to pay?</b><br><br>
             Please select your preferred method:<br><br>
             <div class="suggestions">
@@ -129,7 +129,7 @@ function getBotResponse(input) {
         kw: ["laguna aquatech office", "sa laguna aquatech office", "office pay", "pumunta sa opisina", "walk-in", "address", "maahas"],
         en: `<b>Paying at Laguna Aquatech Office:</b><br><br>
             📍 <b>Address:</b> 5524 Manila South Rd, Brgy. Maahas, Los Baños.<br>
-            ⏰ <b>Hours:</b> Mon-Fri 8am-5pm, Sat 8am-12pm.<br><br>
+            ⏰ <b>Hours:</b> Mon-Fri 7am-4pm, Sat 8am-12pm.<br><br>
             ✅ <b>Required for Due Dates:</b> If today is your due date, pay here in-person.`,
         tl: `<b>Pagbabayad sa Laguna Aquatech Office:</b><br><br>
             📍 <b>Address:</b> 5524 Manila South Rd, Brgy. Maahas, Los Baños.<br>
@@ -156,7 +156,7 @@ function getBotResponse(input) {
             <i>Paalala: 3 business days bago mag-reflect ang bayad.</i>`
     },
     LagunaAquatechVslwd: {
-        kw: ["difference", "magkaiba", "pagkakaiba", "vs", "compare", "roles", "pinagkaiba", "pag kakaiba"],
+        kw: ["difference", "magkaiba", "pagkakaiba", "vs", "compare", "roles", "pinagkaiba", "pag kakaiba", "lwd at laguna aquatech", "difference between lwd and laguna aquatech"],
         en: `<b>Difference between LWD and Laguna Aquatech:</b><br><br>
             • <b>LWD:</b> The Owner & Regulator (Quality control).<br>
             • <b>Laguna Aquatech:</b> The Operator (Billing & Repairs).<br><br>
@@ -167,17 +167,17 @@ function getBotResponse(input) {
             <i>Ang LWD ang sumusuri sa tubig; ang Aquatech ang nagpapadala ng bill.</i>`
     },
     aboutLWD: {
-        kw: ["ano ang lwd", "about lwd", "laguna water district", "ano ang tungkulin ng lwd", "ano ang ginagawa", "what is lwd"],
+        kw: ["ano ang lwd", "about lwd", "laguna water district", "ano ang tungkulin ng lwd", "ano ang ginagawa", "what is lwd", "what does lwd do", "what is laguna water district", "what does laguna water district do", "tungkulin ng lwd"],
         en: "<b>What does Laguna Water District (LWD) do?</b><br>LWD is the <b>government regulator</b>. They ensure water quality through analysis and oversee the partnership with Laguna Aquatech to protect consumers.",
         tl: "<b>Ano ang ginagawa ng Laguna Water District (LWD)?</b><br>Ang LWD ang <b>government regulator</b>. Sila ang sumusuri sa kalidad ng tubig (water analysis) at naniniguradong maayos ang serbisyo ng Laguna Aquatech para sa publiko."
     },
     about_aquatech: {
-        kw: ["ano ang laguna aquatech", "what is laguna aquatech", "about the company"],    
+        kw: ["ano ang laguna aquatech", "what is laguna aquatech", "about the company", "tungkulin ng laguna aquatech", "ano ginagawa ng laguna aquatech", "what does laguna aquatech do"],    
         en: "<b>What is Laguna Aquatech?</b><br>It is the service operator handling billing and repairs.",
         tl: "<b>Ano ang Laguna Aquatech?</b><br>Sila ang operator na namamahala sa billing at repairs."
     },
     board: {
-        kw: ["board", "directors", "sino ang mga board", "board members", "bod", "officials", "namumuno"],
+        kw: ["board", "directors", "sino ang mga board", "board members", "bod", "officials", "namumuno", "board of directors", "lupon ng mga direktor", "sino ang mga namumuno", "sino ang mga board of directors"],
         en: `<b>Board of Directors:</b><br>
             • <b>Dr. Marina A. Alipon</b> (Chairperson - Business Sector)<br>
             • <b>Gen. Edwin I. Corvera</b> (Vice Chairperson - Civic Sector)<br>
@@ -192,42 +192,42 @@ function getBotResponse(input) {
             • <b>Engr. King A. Sanchez</b> (Member - Professional Sector)`
     },
     noSolution: {
-        kw: ["pare-pareho", "walang solusyon", "walang kwenta", "problema", "no solution", "same problem"],
+        kw: ["pare-pareho", "walang solusyon", "walang kwenta", "problema", "no solution", "same problem", "same issues", "pareho parin", "bakit walang solusyon", "bakit walang kwenta"],
         en: "<b>The problems are always the same with no solution.</b><br>We understand your frustration. Please know that we are actively working on system improvements to provide a more permanent solution.",
         tl: "<b>Pare-pareho ang problema walang solusyon.</b><br>Nauunawaan po namin kayo. Ginagawan naman po natin ito ng solution sa kasalukuyan at nagsisikap kaming mapabuti ang serbisyo."
     },
     busyCS: {
-        kw: ["nasagot", "customer service", "cannot reach", "walang sumasagot", "busy", "hindi sumasagot", "sumasagot"],
+        kw: ["nasagot", "customer service", "answering", "cannot reach", "walang sumasagot", "busy", "hindi sumasagot", "sumasagot", "bakit walang sumasagot", "bakit hindi nasagot", "hindi maabot"],
         en: "<b>Why is Customer Service not answering?</b><br>There are times when many people are calling at the same time. Please try again in a few minutes or send us an email at ogm@laguna-water.com.",
         tl: "<b>Bakit hindi nasagot ang cxxustomer service?</b><br>May mga oras po na nagkakasabay-sabay ang tawag kaya hindi agad ma-entertain ang lahat. Maaari pong subukan muli pagkalipas ng ilang minuto."
     },
     neighborBill: {
-        kw: ["kapitbahay", "kapit bahay", "iniwan", "nawawala", "hindi nakakaabot", "neighbor"],
-        en: "<b>Why is the bill left with a neighbor?</b><br>The bill may not be reaching the concessionaire directly if the location is hard to access. Please contact us to verify your delivery address.",
+        kw: ["kapitbahay", "kapit bahay", "iniwan", "nawawala", "hindi nakakaabot", "neighbor", "bill left with neighbor", "bakit iniwan sa kapitbahay", "bakit nawawala ang bill", "bakit hindi nakakaabot ang bill"],
+        en: "<b>Why is the bill left with a neighbor?</b><br>The bill may not be reaching    the concessionaire directly if the location is hard to access. Please contact us to verify your delivery address.",
         tl: "<b>Bakit iniiwan sa kapitbahay ang bill?</b><br>Maaaring hindi makapasok ang reader o hindi nakakaabot sa mismong concessionaire ang bill dahil sa lokasyon. I-report po ito sa amin."
     },
     noWater: {
-        kw: ["no water", "wala tubig", "walang tubig", "wla", "tulo", "natulo", "nawalan", "putol", "bakit walang tubig"],
+        kw: ["no water", "wala tubig", "walang tubig", "wla", "tulo", "natulo", "nawalan", "putol", "bakit walang tubig", "bakit wla tubig"],
         en: "<b>No Water:</b> This may be due to emergency repairs/breakdown at the pump station. Please check our FB page or call (049) 536-0661 for updates.",
         tl: "<b>Walang Tubig:</b> Nagkaroon po ng emergency breakdown o repair sa pump station. I-check ang aming FB page o tumawag sa (049) 536-0661 para sa status."
     },
     highBill: {
-        kw: ["high bill", "mataas ang bill", "bakit mahal", "tumaas ang bill", "mahal ang bill", "taas ng bill", "bill is high"],
+        kw: ["high bill", "mataas ang bill", "bakit mahal", "tumaas ang bill", "mahal ang bill", "taas ng bill", "bill is high", "bakit tumaas ang bill", "bakit mahal ang bill"],
         en: "<b>Why is my bill high?</b><br>• <b>Leaks:</b> Check for hidden leaks in toilets or faucets.<br>• <b>Meter Test:</b> If the meter spins while all taps are closed, there is a leak.<br>• <b>Fees:</b> Ensure you've factored in Septage and Environmental fees.",
         tl: "<b>Bakit mataas ang bill?</b><br>• <b>Leaks:</b> I-check kung may tagas sa banyo o gripo.<br>• <b>Meter Test:</b> Kung umiikot ang metro kahit sarado lahat ng gripo, may leak.<br>• <b>Fees:</b> Kasama sa bill ang Septage at Environmental fees."
     },
     delayedBill: {
-        kw: ["delayed", "hindi dumating", "anyare", "bakit wala ang bill", "wala pang bill", "late bill", "nawawalang bill", "walang dumating"],
+        kw: ["delayed", "hindi dumating", "anyare", "bakit wala ang bill", "wala pang bill", "late bill", "nawawalang bill", "walang dumating", "bakit delayed ang bill", "bakit wala pang bill"],
         en: "<b>Bill Issues:</b> Monthly bills may be delayed due to adjusted meter reading schedules. To get your current balance, please contact Laguna Aquatech at (049) 536-0661.",
         tl: "<b>Isyu sa Bill:</b> Maaaring maantala ang bill dahil sa bagong schedule ng meter reading. Maaari ninyong itanong ang inyong balance sa (049) 536-0661."
     },
     lowPressure: {
-        kw: ["mahina", "low pressure", "hinay", "weak", "pressure", "pasukan"],
+        kw: ["mahina", "low pressure", "hinay", "weak", "pressure", "pasukan", "bakit mahina ang tubig", "bakit hinay ang tubig", "bakit low pressure", "low"],
         en: "<b>Low Pressure:</b> Due to lack of supply or simultaneous usage during rush hours. Pump stations are on standby to boost supply.",
         tl: "<b>Bakit mahina ang tubig?</b><br>Dahil sa kakulangan ng supply o sabay-sabay na paggamit kapag rush hour. May mga pump station na naka-standby para tumulong."
     },
     dirtyWater: {
-        kw: ["madumi", "dirty", "malabo", "madilaw", "dilaw", "yellow", "buhangin", "sand", "amoy", "marumi", "dumi"],
+        kw: ["madumi", "dirty", "malabo", "madilaw", "dilaw", "yellow", "buhangin", "sand", "amoy", "marumi", "dumi", "kulay", "maputi", "malabo", "white"],
         en: `<b>Water Quality Issue:</b> Let's check the color. Is it <b>brownish</b> or <b>white/cloudy</b>?<br><br>
             <div class="suggestions">
                 <button onclick="sendSuggestion('Brown water')">🟤 Brownish/Muddy</button>
@@ -278,13 +278,13 @@ function getBotResponse(input) {
             <br><br>I-report po ito agad sa <b>(049) 536-0661</b> para ma-inspect ang inyong lugar.`
     },
     partnership: {
-        kw: ["partnership", "laguna aquatech", "tinatag", "purpose", "relationship"],
+        kw: ["partnership", "laguna aquatech", "tinatag", "purpose", "relationship", "layunin ng partnership", "ano ang partnership", "ano ang layunin ng partnership"],
         en: "<b>LWD & Laguna Aquatech Partnership:</b> To improve the water system of Laguna Water District (LWD), enhance facilities, and reduce Non-Revenue Water (NRW).",
         tl: "<b>Layunin ng Partnership:</b> Upang mapabuti ang water system ng LWD at ma-enhance ang mga pasilidad para matiyak ang mataas na kalidad na serbisyo."
     },
    newConn: {
         // FOCUS: Applying and first-time installation
-        kw: ["new connection", "apply", "magpakabit", "mag pakabit", "magpagkabit", "application", "requirements", "magkano magpakabit", "installation fee", "bagong linya", "bagong koneksyon"],
+        kw: ["new connection", "apply", "magpakabit", "mag pakabit", "magpagkabit", "application", "requirements", "magkano magpakabit", "installation fee", "bagong linya", "bagong koneksyon", "paano magpakabit", "paano mag apply ng bagong linya", "paano mag apply ng bagong koneksyon"],
         en: `<b>How to apply for a New Connection:</b><br><br>
             📋 <b>Requirements:</b><br>
             • Accomplished Application Form<br>
@@ -316,7 +316,7 @@ function getBotResponse(input) {
     },
     disconnection: {
         // FOCUS: The ACT of cutting water (Unpaid or Voluntary)
-        kw: ["disconnection", "putol", "mapuputulan", "naputulan", "pumutol", "disconnect", "bakit naputol", "bakit walang tubig", "naka-disconnect"],
+        kw: ["disconnection", "putol", "mapuputulan", "naputulan", "pumutol", "disconnect", "bakit naputol", "bakit walang tubig", "naka-disconnect", "paano mag-disconnect", "paano mag putol", "paano mag disconnect", "paano mag pa putol ng tubig"],
         en: `<b>Disconnection Policy:</b><br><br>
             ⚠️ <b>Disconnection due to Unpaid Bills:</b><br>
             • Your line will be disconnected after <b>two (2) months</b> of unpaid bills.<br><br>
@@ -338,7 +338,7 @@ function getBotResponse(input) {
     },
     reconnection: {
         // FOCUS: Getting water BACK (Process, Fees, SOA)
-        kw: ["reconnection", "re-connection", "reconnect", "ikabit ulit", "paano magpakabit ulit", "soa", "statement of account", "reconnection fee", "ulit",  "magkano reconnection", "pabalik ng tubig", "ibalik ang tubig","reconnect"],
+        kw: ["reconnection", "re-connection", "reconnect", "ikabit ulit", "paano magpakabit ulit", "soa", "statement of account", "reconnection fee", "ulit",  "magkano reconnection", "pabalik ng tubig", "ibalik ang tubig","reconnect", "paano mag reconnect", "paano mag pakabit ulit"],
         en: `<b>How to Reconnect your Water Service:</b><br><br>
             1. 📄 <b>Provide SOA:</b> Obtain your Statement of Account (SOA) from the Laguna Aquatech office.<br>
             2. 💳 <b>Settle Balance:</b> Pay all unpaid bills and the reconnection fee (₱280.00).<br>
@@ -349,17 +349,17 @@ function getBotResponse(input) {
             3. ⏳ <b>Timeline:</b> Maibabalik ang inyong serbisyo ng tubig sa loob ng <b>24 oras</b> matapos makapagbayad.`
     },
     office: {
-        kw: ["hours", "open", "location", "address", "saan", "oras", "bukas", "opisina", "where", "office", "hour", "office hours", "office hour"],
+        kw: ["hours", "open", "location", "address", "saan", "oras", "bukas", "opisina", "where", "office", "hour", "location", "address", "saan ang opisina", "saan ang office", "saan ang location"],
         en: "<b>Mon-Fri, 8AM-5PM (No Noon Break)</b>. Located at 5524 Manila South Rd, Brgy. Maahas.",
         tl: "<b>Mon-Fri, 8AM-5PM (Walang Noon Break)</b>. Matatagpuan sa 5524 Manila South Rd, Brgy. Maahas."
     },
     contact: {
-        kw: ["contact", "phone", "number", "email", "call", "tawag", "numero"],
+        kw: ["contact", "phone", "number", "email", "call", "tawag", "numero", "email", "contact number", "contact info", "how to contact", "paano kontakin", "paano tawagan", "paano mag email"],
         en: "<b>Contact Us:</b> (049) 536-0661 | ogm@laguna-water.com",
         tl: "<b>Kontakin Kami:</b> (049) 536-0661 | ogm@laguna-water.com"
     },
     complaint: {
-        kw: ["reklamo", "complaint", "ireklamo", "mali", "report", "file complaint"],
+        kw: ["reklamo", "complaint", "ireklamo", "mali", "report", "file complaint", "paano mag reklamo", "paano mag file ng complaint", "bakit mali", "bakit may reklamo", "paano mag report", "paano mag file ng report"],
         en: `<b>How to file a complaint:</b><br><br>
             1. 📝 <b>Formal Letter:</b> Send a letter addressed to the General Manager.<br>
             2. 📧 <b>Email:</b> Send details to <b>ogm@laguna-water.com</b>.<br>
@@ -372,7 +372,7 @@ function getBotResponse(input) {
             Siguraduhing kasama ang inyong <b>Account Number</b> at <b>Contact Details</b>.`
     },
     history: {
-        kw: ["history of lwd", "history ng lwd", "kasaysayan ng lwd", "background ng lwd", "tungkol sa lwd"],
+        kw: ["history of lwd", "history ng lwd", "kasaysayan ng lwd", "background ng lwd", "tungkol sa lwd", "lwd history"],
         en: `<b>History of LWD:</b><br><br>
             • <b>1920s:</b> Started as Los Baños Waterworks.<br>
             • <b>1977:</b> Formed as an independent district.<br>
@@ -409,12 +409,12 @@ function getBotResponse(input) {
         tl: "Ang General Manager ng LWD ay si <b>Engr. Joel M. Lapis</b>."
     },
     greeting: {
-        kw: ["hi", "hello", "hey", "kumusta", "kamusta", "uy", "oy", "magandang", "hola", "morning"],
+        kw: ["hi", "hello", "hey", "kumusta", "kamusta", "uy", "oy", "magandang", "hola", "morning", "afternoon", "evening", "good morning", "good afternoon", "good evening", "magandang umaga", "magandang hapon", "magandang gabi"],
         en: getTimedGreeting('en'),
         tl: getTimedGreeting('tl')
     },
     thanks: {
-        kw: ["salamat", "thank", "thanks", "ty", "ok", "okay", "sige"],
+        kw: ["salamat", "thank", "thanks", "ty", "ok", "okay", "sige", "thanks!", "thank you", "salamat!", "sige salamat", "sige salamat!", "ok salamat", "okay salamat", "sige ok", "sige okay", "sige ty", "sige thanks", "sige thank you"],
         en: "You're welcome! Is there anything else?",
         tl: "Walang anuman! May maipaglilingkod pa ba ako?"
     }
