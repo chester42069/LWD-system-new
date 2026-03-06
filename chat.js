@@ -107,8 +107,8 @@ function getBotResponse(input) {
     const library = {
         billingPolicy: {
         kw: ["minimum", "reconnection", "re-connection", "hindi ginagamit", "charge", "bakit may bayad", "minimum charge", "reconnection fee", "bakit may minimum charge", "bakit may reconnection fee"],
-        en: "<b>Minimum Charge & Reconnection Fee:</b> These policies and fees are implemented by <b>Laguna Aquatech</b>. They handle all billing regulations. Please visit their office or call (049) 536-0661 for a detailed explanation.",
-        tl: "<b>Bakit may Minimum Charge at Reconnection Fee?</b><br>Ang mga policy na ito ay sa ilalim ng <b>Laguna Aquatech</b>. Sila lamang po ang makakapag-paliwanag ng detalye. Maaari po kayong tumawag sa (049) 536-0661."
+        en: "<b>Why is there a Minimum Charge or Reconnection Fee?</b><br>For the minimum charge, this policy is implemented by LWUA, while for the reconnection fee it is implemented by Laguna Aquatech. Please contact their office for a detailed explanation.",
+        tl: "<b>Bakit may minimum charge at reconnection fee?</b><br>Para sa minimum charge, policy ito ng LWUA, habang ang reconnection fee ay policy naman ng Laguna Aquatech. Makipag-ugnayan sa kanilang opisina para sa detalye."
     },
     paymentOptions: {
         kw: ["how to pay", "payment", "where to pay", "options", "water bill", "pay", "magbayad", "saan magbabayad", "bayad", "paano mag bayad ng bills", "paano magbayad", "paano mag bayad", "paano magbayad ng bill"],
@@ -168,13 +168,13 @@ function getBotResponse(input) {
     },
     aboutLWD: {
         kw: ["ano ang lwd", "about lwd", "laguna water district", "ano ang tungkulin ng lwd", "ano ang ginagawa", "what is lwd", "what does lwd do", "what is laguna water district", "what does laguna water district do", "tungkulin ng lwd"],
-        en: "<b>What does Laguna Water District (LWD) do?</b><br>LWD is the <b>government regulator</b>. They ensure water quality through analysis and oversee the partnership with Laguna Aquatech to protect consumers.",
-        tl: "<b>Ano ang ginagawa ng Laguna Water District (LWD)?</b><br>Ang LWD ang <b>government regulator</b>. Sila ang sumusuri sa kalidad ng tubig (water analysis) at naniniguradong maayos ang serbisyo ng Laguna Aquatech para sa publiko."
+        en: "<b>What does Laguna Water District (LWD) do?</b><br>LWD ensures the pressure and quality of water supply, conducts water analysis, and oversees its partnership with LARC to improve facilities and services.",
+        tl: "<b>Ano ang ginagawa ng LWD?</b><br>Ang LWD ang:<br>• Nagsisiguro sa pressure at kalidad ng tubig<br>• Gumagawa ng water analysis<br>• Namamahala sa partnership sa LARC"
     },
     about_aquatech: {
         kw: ["ano ang laguna aquatech", "what is laguna aquatech", "about the company", "tungkulin ng laguna aquatech", "ano ginagawa ng laguna aquatech", "what does laguna aquatech do"],    
-        en: "<b>What is Laguna Aquatech?</b><br>It is the service operator handling billing and repairs.",
-        tl: "<b>Ano ang Laguna Aquatech?</b><br>Sila ang operator na namamahala sa billing at repairs."
+        en: "<b>What does Laguna Aquatech do?</b><br>Laguna Aquatech handles commercial and technical operations, including:<br>• Billing & collection<br>• New connections<br>• Leak repairs<br>• Customer Service",
+        tl: "<b>Ano ang ginagawa ng Laguna Aquatech?</b><br>Ang Laguna Aquatech ang nangangasiwa sa:<br>• Billing at paniningil<br>• Bagong koneksyon<br>• Pagkukumpuni ng tagas<br>• Customer service"
     },
     board: {
         kw: ["board", "directors", "sino ang mga board", "board members", "bod", "officials", "namumuno", "board of directors", "lupon ng mga direktor", "sino ang mga namumuno", "sino ang mga board of directors"],
@@ -203,23 +203,23 @@ function getBotResponse(input) {
     },
     neighborBill: {
         kw: ["kapitbahay", "kapit bahay", "iniwan", "nawawala", "hindi nakakaabot", "neighbor", "bill left with neighbor", "bakit iniwan sa kapitbahay", "bakit nawawala ang bill", "bakit hindi nakakaabot ang bill"],
-        en: "<b>Why is the bill left with a neighbor?</b><br>The bill may not be reaching    the concessionaire directly if the location is hard to access. Please contact us to verify your delivery address.",
-        tl: "<b>Bakit iniiwan sa kapitbahay ang bill?</b><br>Maaaring hindi makapasok ang reader o hindi nakakaabot sa mismong concessionaire ang bill dahil sa lokasyon. I-report po ito sa amin."
+        en: "<b>Why is the bill left with my neighbor?</b><br>If your location is difficult to access, the bill may be left nearby. Please verify your delivery address.",
+        tl: "<b>Bakit iniiwan sa kapitbahay ang bill?</b><br>Kung mahirap ma-access ang inyong lokasyon, maaaring iwan ang bill sa malapit. Mangyaring i-verify ang inyong delivery address."
     },
     noWater: {
         kw: ["no water", "wala tubig", "walang tubig", "wla", "tulo", "natulo", "nawalan", "putol", "bakit walang tubig", "bakit wla tubig"],
-        en: "<b>No Water:</b> This may be due to emergency repairs/breakdown at the pump station. Please check our FB page or call (049) 536-0661 for updates.",
-        tl: "<b>Walang Tubig:</b> Nagkaroon po ng emergency breakdown o repair sa pump station. I-check ang aming FB page o tumawag sa (049) 536-0661 para sa status."
+        en: "<b>Why is there no water?</b><br>Possible emergency pump breakdown or repair. Check official announcements or call the office.",
+        tl: "<b>Bakit walang tubig?</b><br>May emergency repair o breakdown sa pump station. I-check ang mga official announcement o tumawag sa opisina."
     },
     highBill: {
         kw: ["high bill", "mataas ang bill", "bakit mahal", "tumaas ang bill", "mahal ang bill", "taas ng bill", "bill is high", "bakit tumaas ang bill", "bakit mahal ang bill", "bakit mataas ang babayadan ko"],
-        en: "<b>Why is my bill high?</b><br>• <b>Leaks:</b> Check for hidden leaks in toilets or faucets.<br>• <b>Meter Test:</b> If the meter spins while all taps are closed, there is a leak.<br>• <b>Fees:</b> Ensure you've factored in Septage and Environmental fees.",
-        tl: "<b>Bakit mataas ang bill?</b><br>• <b>Leaks:</b> I-check kung may tagas sa banyo o gripo.<br>• <b>Meter Test:</b> Kung umiikot ang metro kahit sarado lahat ng gripo, may leak.<br>• <b>Fees:</b> Kasama sa bill ang Septage at Environmental fees."
+        en: "<b>Why is my bill high?</b><br>Possible reasons:<br>• Hidden leaks<br>• Continuous meter movement<br>• Septage & Environmental fees",
+        tl: "<b>Bakit mataas ang bill?</b><br>Mga posibleng dahilan:<br>• May tagas (Hidden leaks)<br>• Umiikot ang metro kahit sarado ang gripo<br>• May kasamang Septage at Environmental fees"
     },
     delayedBill: {
         kw: ["delayed", "hindi dumating", "anyare", "bakit wala ang bill", "wala pang bill", "late bill", "nawawalang bill", "walang dumating", "bakit delayed ang bill", "bakit wala pang bill"],
-        en: "<b>Bill Issues:</b> Monthly bills may be delayed due to adjusted meter reading schedules. To get your current balance, please contact Laguna Aquatech at (049) 536-0661.",
-        tl: "<b>Isyu sa Bill:</b> Maaaring maantala ang bill dahil sa bagong schedule ng meter reading. Maaari ninyong itanong ang inyong balance sa (049) 536-0661."
+        en: "<b>Why is my bill delayed?</b><br>Possible reasons:<br>• Adjusted meter reading schedules<br>• Delivery issues<br><br>Call Customer Service to verify your balance: 0998 585 3723",
+        tl: "<b>Bakit hindi dumating ang bill?</b><br>Maaaring:<br>• Na-adjust ang schedule ng metro<br>• May delivery issue<br><br>Tumawag sa Customer Service para i-verify ang inyong balance: 0998 585 3723"
     },
     lowPressure: {
         kw: ["mahina", "low pressure", "hinay", "weak", "pressure", "pasukan", "bakit mahina ang tubig", "bakit hinay ang tubig", "bakit low pressure", "low"],
@@ -277,10 +277,10 @@ function getBotResponse(input) {
             Kung matagal bago luminaw, maaaring ito ay <b>overdosing ng chemicals</b> sa paglilinis.
             <br><br>I-report po ito agad sa <b>(049) 536-0661</b> para ma-inspect ang inyong lugar.`
     },
-    partnership: {
+   partnership: {
         kw: ["partnership", "laguna aquatech", "tinatag", "purpose", "relationship", "layunin ng partnership", "ano ang partnership", "ano ang layunin ng partnership"],
-        en: "<b>LWD & Laguna Aquatech Partnership:</b> To improve the water system of Laguna Water District (LWD), enhance facilities, and reduce Non-Revenue Water (NRW).",
-        tl: "<b>Layunin ng Partnership:</b> Upang mapabuti ang water system ng LWD at ma-enhance ang mga pasilidad para matiyak ang mataas na kalidad na serbisyo."
+        en: "<b>What is the purpose of the LWD & Laguna Aquatech partnership?</b><br>To:<br>• Improve the water system<br>• Enhance facilities<br>• Reduce Non-Revenue Water (NRW)<br>• Provide better service to the community",
+        tl: "<b>Ano ang layunin ng partnership ng LWD at Laguna Aquatech?</b><br>Upang:<br>• Mapabuti ang water system<br>• Ma-enhance ang mga pasilidad<br>• Mabawasan ang Non-Revenue Water (NRW)<br>• Magbigay ng mas mahusay na serbisyo sa komunidad"
     },
    newConn: {
         // FOCUS: Applying and first-time installation
