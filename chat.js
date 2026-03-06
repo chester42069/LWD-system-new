@@ -199,7 +199,7 @@ function getBotResponse(input) {
     busyCS: {
         kw: ["nasagot", "customer service", "answering", "cannot reach", "walang sumasagot", "busy", "hindi sumasagot", "sumasagot", "bakit walang sumasagot", "bakit hindi nasagot", "hindi maabot"],
         en: "<b>Why is Customer Service not answering?</b><br>There are times when many people are calling at the same time. Please try again in a few minutes or send us an email at ogm@laguna-water.com.",
-        tl: "<b>Bakit hindi nasagot ang cxxustomer service?</b><br>May mga oras po na nagkakasabay-sabay ang tawag kaya hindi agad ma-entertain ang lahat. Maaari pong subukan muli pagkalipas ng ilang minuto."
+        tl: "<b>Bakit hindi nasagot ang customer service?</b><br>May mga oras po na nagkakasabay-sabay ang tawag kaya hindi agad ma-entertain ang lahat. Maaari pong subukan muli pagkalipas ng ilang minuto."
     },
     neighborBill: {
         kw: ["kapitbahay", "kapit bahay", "iniwan", "nawawala", "hindi nakakaabot", "neighbor", "bill left with neighbor", "bakit iniwan sa kapitbahay", "bakit nawawala ang bill", "bakit hindi nakakaabot ang bill"],
@@ -212,7 +212,7 @@ function getBotResponse(input) {
         tl: "<b>Walang Tubig:</b> Nagkaroon po ng emergency breakdown o repair sa pump station. I-check ang aming FB page o tumawag sa (049) 536-0661 para sa status."
     },
     highBill: {
-        kw: ["high bill", "mataas ang bill", "bakit mahal", "tumaas ang bill", "mahal ang bill", "taas ng bill", "bill is high", "bakit tumaas ang bill", "bakit mahal ang bill"],
+        kw: ["high bill", "mataas ang bill", "bakit mahal", "tumaas ang bill", "mahal ang bill", "taas ng bill", "bill is high", "bakit tumaas ang bill", "bakit mahal ang bill", "bakit mataas ang babayadan ko"],
         en: "<b>Why is my bill high?</b><br>• <b>Leaks:</b> Check for hidden leaks in toilets or faucets.<br>• <b>Meter Test:</b> If the meter spins while all taps are closed, there is a leak.<br>• <b>Fees:</b> Ensure you've factored in Septage and Environmental fees.",
         tl: "<b>Bakit mataas ang bill?</b><br>• <b>Leaks:</b> I-check kung may tagas sa banyo o gripo.<br>• <b>Meter Test:</b> Kung umiikot ang metro kahit sarado lahat ng gripo, may leak.<br>• <b>Fees:</b> Kasama sa bill ang Septage at Environmental fees."
     },
@@ -316,7 +316,7 @@ function getBotResponse(input) {
     },
     disconnection: {
         // FOCUS: The ACT of cutting water (Unpaid or Voluntary)
-        kw: ["disconnection", "putol", "mapuputulan", "naputulan", "pumutol", "disconnect", "bakit naputol", "bakit walang tubig", "naka-disconnect", "paano mag-disconnect", "paano mag putol", "paano mag disconnect", "paano mag pa putol ng tubig"],
+        kw: ["disconnection", "putol", "mapuputulan", "naputulan", "pumutol", "disconnect", "pinutol", "bakit naputol", "bakit walang tubig", "naka-disconnect", "paano mag-disconnect", "paano mag putol", "paano mag disconnect", "paano mag pa putol ng tubig"],
         en: `<b>Disconnection Policy:</b><br><br>
             ⚠️ <b>Disconnection due to Unpaid Bills:</b><br>
             • Your line will be disconnected after <b>two (2) months</b> of unpaid bills.<br><br>
@@ -338,7 +338,7 @@ function getBotResponse(input) {
     },
     reconnection: {
         // FOCUS: Getting water BACK (Process, Fees, SOA)
-        kw: ["reconnection", "re-connection", "reconnect", "ikabit ulit", "paano magpakabit ulit", "soa", "statement of account", "reconnection fee", "ulit",  "magkano reconnection", "pabalik ng tubig", "ibalik ang tubig","reconnect", "paano mag reconnect", "paano mag pakabit ulit"],
+        kw: ["reconnection", "re-connection", "reconnect", "ikabit ulit", "ulit", "paano magpakabit ulit", "soa", "statement of account", "reconnection fee", "ulit",  "magkano reconnection", "pabalik ng tubig", "ibalik ang tubig","reconnect", "paano mag reconnect", "paano mag pakabit ulit"],
         en: `<b>How to Reconnect your Water Service:</b><br><br>
             1. 📄 <b>Provide SOA:</b> Obtain your Statement of Account (SOA) from the Laguna Aquatech office.<br>
             2. 💳 <b>Settle Balance:</b> Pay all unpaid bills and the reconnection fee (₱280.00).<br>
