@@ -186,6 +186,31 @@ header.scrolled .menu-toggle { color: var(--secondary); }
     margin-bottom: 3rem; 
 }
 
+.hero-photo-credit {
+    font-size: 0.65rem;            
+    color: rgba(255, 255, 255, 0.400);
+    margin-top: 1.5rem;           
+    text-align: center;          
+    font-weight: 300;              
+}
+
+.hero-photo-credit a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+}
+
+.hero-photo-credit a:hover {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .hero-photo-credit {
+        font-size: 0.6rem;
+        margin-top: 1rem;
+    }
+}
+
 .hero h1 {
     font-size: 3.4rem;
     margin-bottom: 1.5rem;
@@ -553,4 +578,5 @@ footer {
         gap: 10px;
         margin-bottom: 0.85rem;
     }
+
 }
