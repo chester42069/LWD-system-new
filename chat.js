@@ -404,9 +404,19 @@ function getBotResponse(input) {
             • <b>Layunin:</b> 25-taong pakikipagtulungan para sa 24-oras na tubig.`
     },
     manager: {
-        kw: ["manager", "lapis", "gm", "head"],
+        kw: ["manager", "lapis", "gm"],
         en: "The General Manager of LWD is <b>Engr. Joel M. Lapis</b>.",
         tl: "Ang General Manager ng LWD ay si <b>Engr. Joel M. Lapis</b>."
+    },
+    technical_head: {
+        kw: ["technical head", "technical unit", "olea", "principal engineer", "head of technical unit", "namumuno sa technical unit"],
+        en: "The Technical Unit is headed by <b>Engr. Charles Bronson B. Olea</b>, Principal Engineer C.",
+        tl: "Ang Technical Unit ay pinamumunuan ni <b>Engr. Charles Bronson B. Olea</b>, Principal Engineer C."
+    },
+    admin_head: {
+        kw: ["admin head", "admin unit", "jimenez", "senior engineer", "head of admin unit", "namumuno sa admin unit"],
+        en: "The Admin Unit is headed by <b>Engr. Lalaine E. Jimenez</b>, Senior Engineer A.",
+        tl: "Ang Admin Unit ay pinamumunuan ni <b>Engr. Lalaine E. Jimenez</b>, Senior Engineer A."
     },
     greeting: {
         kw: ["hi", "hello", "hey", "kumusta", "kamusta", "uy", "oy", "magandang", "hola", "morning", "afternoon", "evening", "good morning", "good afternoon", "good evening", "magandang umaga", "magandang hapon", "magandang gabi"],
